@@ -1,0 +1,33 @@
+import { useEffect } from 'react';
+
+export function Landing() {
+  useEffect(() => {
+    document.title = 'reasoning.software';
+  }, []);
+
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center px-6 py-12">
+      <div className="max-w-xl text-center">
+        <h1 className="font-mono text-2xl md:text-3xl font-semibold tracking-tight mb-8">
+          reasoning.software
+        </h1>
+
+        <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
+          Independent applied research on reasoning systems—machine, human, and
+          hybrid. Exploring how models think, where they fail, and what
+          interfaces help.
+        </p>
+
+        <p className="text-base text-muted-foreground leading-relaxed mb-8">
+          Topics include world modeling, long-horizon reasoning, embodied
+          intelligence, human-computer interfaces, and applied AI. Experiments,
+          paper recreations, tooling, and open questions.
+        </p>
+
+        <p className="font-mono text-sm text-muted-foreground">
+          More to come.
+        </p>
+      </div>
+    </div>
+  );
+}
