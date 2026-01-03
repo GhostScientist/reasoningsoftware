@@ -51,6 +51,33 @@ export const notes: Note[] = [
       "I'm still iterating on the category definitions and the visual encoding. But the core idea—turning sequential traces into 2D patterns—has been productive. Sometimes the right abstraction is just about finding a representation that makes patterns visible.",
     ],
   },
+  {
+    slug: 'diffthinker-visual-reasoning-paradigm',
+    title: 'DiffThinker: When reasoning happens in pixels',
+    date: '2026-01-03',
+    content: [
+      "A paper caught my attention this week: DiffThinker, which reframes visual reasoning as an image-to-image task rather than the standard text-based chain-of-thought approach. The core insight is deceptively simple—if the problem is visual, maybe the reasoning should be too.",
+      {
+        type: 'image',
+        src: '/images/diffthinker-infographic.png',
+        alt: 'DiffThinker paradigm comparison showing text-centric reasoning versus generative visual reasoning',
+        caption: 'DiffThinker shifts reasoning from symbolic text space to visual space, achieving significant performance gains on vision-centric tasks.',
+      },
+      "Current MLLMs handle visual puzzles by converting them to text, reasoning through chain-of-thought, and outputting symbolic plans. This works reasonably well for many tasks, but it struggles with problems where spatial relationships matter—mazes, path planning, geometric reasoning. The text bottleneck loses information that was obvious in the original image.",
+      "DiffThinker inverts this. Instead of image→text→reasoning→text, it does image→reasoning→image. For a maze, rather than producing directions like 'D,L,D,D,R,R,R...', it generates an image with the solution path drawn directly. The diffusion model handles the visual reasoning natively.",
+      "The reported numbers are striking: 314% improvement over GPT-5 on vision-centric tasks. But what interests me more than the benchmark numbers are the architectural properties. Fixed inference time (1.1s regardless of problem complexity). Native parallelism—exploring multiple solution paths simultaneously. And the ability to generate visual candidates that other models can verify.",
+      "This connects directly to something I've been thinking about for reasoning software: the gap between how we represent problems internally and how models process them. Text is a lossy compression of spatial information. If your reasoning trace has to go through that bottleneck, you're fighting the representation.",
+      "The robotics implications are what really got me interested. Real-time motor planning and locomotion are fundamentally visual-spatial problems. A robot navigating an environment, planning arm trajectories, or coordinating multi-joint movements—these are domains where text-based reasoning traces seem like the wrong abstraction from the start.",
+      "Current approaches to robot planning often involve converting visual input to symbolic representations, reasoning in that space, then converting back to motor commands. Each conversion is a potential failure point. What if the reasoning happened in a representation that was already spatially grounded?",
+      "I'm not suggesting DiffThinker is ready for real-time robotics—the 1.1s inference time is far too slow for reactive control. But the paradigm shift matters. If visual reasoning can happen natively in visual space, the same principle might apply to other domains where we've been forcing problems through text-shaped holes.",
+      "The 'controllable' property they highlight—fixed, predictable computation time—is particularly relevant for robotics. Variable-length chain-of-thought is a nightmare for systems with hard real-time constraints. You can't have your robot's planner suddenly decide to 'think longer' about a tricky situation when there's a wall approaching.",
+      "Worth watching where this goes. The core insight—match your reasoning representation to your problem representation—seems like it should generalize beyond mazes.",
+    ],
+    externalLink: {
+      url: 'https://arxiv.org/abs/2512.24165',
+      label: 'Read the paper on arXiv',
+    },
+  },
 ];
 
 export function getNoteBySlug(slug: string): Note | undefined {
