@@ -59,7 +59,7 @@ export const notes: Note[] = [
       "A paper caught my attention this week: DiffThinker, which reframes visual reasoning as an image-to-image task rather than the standard text-based chain-of-thought approach. The core insight is deceptively simple—if the problem is visual, maybe the reasoning should be too.",
       {
         type: 'image',
-        src: '/images/diffthinker-infographic.png',
+        src: '/diffthinker.png',
         alt: 'DiffThinker paradigm comparison showing text-centric reasoning versus generative visual reasoning',
         caption: 'DiffThinker shifts reasoning from symbolic text space to visual space, achieving significant performance gains on vision-centric tasks.',
       },
