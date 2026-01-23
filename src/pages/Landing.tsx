@@ -9,7 +9,7 @@ export function Landing() {
     <div className="min-h-screen flex flex-col items-center justify-center px-6 py-12">
       <div className="max-w-xl text-center">
         <img
-          src="/../public/reasoning-software.png"
+          src="/reasoning-software.png"
           alt="reasoning.software logo"
           className="w-96 h-96 mx-auto mb-8"
         />
