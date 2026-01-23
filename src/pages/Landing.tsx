@@ -8,6 +8,11 @@ export function Landing() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-6 py-12">
       <div className="max-w-xl text-center">
+        <img
+          src="/../public/reasoning-software.png"
+          alt="reasoning.software logo"
+          className="w-96 h-96 mx-auto mb-8"
+        />
         <h1 className="font-mono text-2xl md:text-3xl font-semibold tracking-tight mb-8">
           reasoning.software
         </h1>
