@@ -32,9 +32,22 @@ export interface Paper {
   artifacts: string[];
 }
 
+export interface NoteImage {
+  type: 'image';
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
+export type NoteContentItem = string | NoteImage;
+
 export interface Note {
   slug: string;
   title: string;
   date: string;
-  content: string[];
+  content: NoteContentItem[];
+  externalLink?: {
+    url: string;
+    label: string;
+  };
 }
