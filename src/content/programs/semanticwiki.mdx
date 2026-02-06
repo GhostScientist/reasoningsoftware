@@ -1,0 +1,79 @@
+import { FramingCallout, LensSplit } from '@/components/research/MdxBlocks';
+
+## Why This Exists
+
+SemanticWiki addresses a practical engineering gap: architecture knowledge usually decays faster than code changes. The project treats documentation as a generated, verifiable artifact with direct traceability back to implementation.
+
+<FramingCallout title="Core Thesis">
+  Architectural understanding should be queryable, testable, and linked to exact source locations, not trapped in stale prose.
+</FramingCallout>
+
+## Product Surface
+
+SemanticWiki currently ships as an AI-powered CLI with two concrete operating modes:
+
+1. `semanticwiki generate` to produce architecture documentation and static wiki outputs.
+2. `semanticwiki continue` to resume long-running autonomous documentation sessions with cached context.
+
+```bash
+semanticwiki generate -r ./my-project --site
+semanticwiki generate -r ./my-project --verbose
+semanticwiki continue -r ./my-project --skip-index
+```
+
+The output includes architecture overviews, module maps, data-flow docs, and getting-started guides with direct source references such as `src/auth/jwt.ts:23`.
+
+## Product and Research Lenses
+
+<LensSplit
+  product={
+    <>
+      <p>Developer-facing value comes from speed to comprehension in unfamiliar codebases.</p>
+      <p>The static site output focuses on searchability, keyboard navigation, and low-friction handoff across teams.</p>
+    </>
+  }
+  research={
+    <>
+      <p>The same generation loop acts as an experiment platform for studying retrieval quality and planning reliability.</p>
+      <p>Each run can be evaluated for traceability precision, structural coverage, and documentation drift under code churn.</p>
+    </>
+  }
+/>
+
+## System Architecture
+
+SemanticWiki combines four layers:
+
+1. Codebase exploration and structural extraction.
+2. Semantic retrieval over embeddings (FAISS + all-MiniLM-L6-v2).
+3. Agentic reasoning loop for documentation planning and synthesis.
+4. Verification loop for source-link integrity and output consistency.
+
+This architecture is intentionally dual-purpose: it powers a usable product and produces measurable research signals.
+
+## Evaluation Strategy
+
+| Metric | Definition | Failure Signal |
+| --- | --- | --- |
+| Traceability Precision | % of documentation claims that resolve to valid source spans | Broken links, wrong file-level mappings |
+| Architectural Coverage | % of core modules and interfaces represented | Missing high-centrality modules |
+| Regeneration Stability | Similarity across repeated runs with same inputs | High variance across unchanged code |
+| Link Drift Resilience | Integrity after codebase edits | Growing unresolved references over time |
+
+## Research Program
+
+Current work is less about writing prettier docs and more about formalizing documentation generation as a reliability problem:
+
+- How does retrieval strategy alter architectural coherence?
+- Which planning loops best balance speed with verification quality?
+- How much autonomous execution is safe before human checkpoints are required?
+
+Negative outcomes, such as brittle trace mapping or overconfident summaries, are tracked as first-class artifacts.
+
+## Near-Term Direction
+
+1. Add confidence scoring to all source-linked claims.
+2. Introduce benchmark suites that stress heterogeneous mono-repos.
+3. Compare planning strategies under identical retrieval corpora.
+
+SemanticWiki is the intellectual property of reasoning.software (MadWatch LLC), created by Dakota Kim.

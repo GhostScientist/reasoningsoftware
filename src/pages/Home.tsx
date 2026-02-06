@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { flagshipPrograms } from '@/content/programs';
 
 export function Home() {
   useEffect(() => {
@@ -19,7 +20,7 @@ export function Home() {
         </p>
 
         <p className="text-muted-foreground leading-relaxed">
-          Experiments, papers, tools, and field notes focused on clarity,
+          Experiments, papers, tools, and essays focused on clarity,
           failure modes, and real-world deployment.
         </p>
       </header>
@@ -37,6 +38,29 @@ export function Home() {
           visualizations that help reveal what's happening rather than obscuring
           it.
         </p>
+      </section>
+
+      <section className="space-y-4 border-t border-border pt-8">
+        <h2 className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">
+          Current Program Narratives
+        </h2>
+        <div className="grid gap-4 md:grid-cols-2">
+          {flagshipPrograms.map((program) => (
+            <article
+              key={program.slug}
+              className="space-y-2 rounded-md border border-border bg-card/70 p-4"
+            >
+              <h3 className="font-medium">{program.title}</h3>
+              <p className="text-sm text-muted-foreground">{program.byline}</p>
+              <Link
+                to={`/research/${program.slug}`}
+                className="font-mono text-xs uppercase tracking-[0.1em] underline underline-offset-4 transition-colors hover:text-muted-foreground"
+              >
+                Open research page
+              </Link>
+            </article>
+          ))}
+        </div>
       </section>
 
       <nav className="pt-4 border-t border-border">
@@ -59,10 +83,10 @@ export function Home() {
           </li>
           <li>
             <Link
-              to="/notes"
+              to="/blog"
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
-              Notes →
+              Blog →
             </Link>
           </li>
         </ul>

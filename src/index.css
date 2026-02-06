@@ -34,6 +34,9 @@
   --chart-4: oklch(0.65 0 0);
   --chart-5: oklch(0.8 0 0);
   --radius: 0.25rem;
+  --surface-glow-a: oklch(0.97 0.02 90 / 0.35);
+  --surface-glow-b: oklch(0.98 0.01 260 / 0.45);
+  --surface-grid: oklch(0.9 0 0 / 0.35);
   --sidebar: oklch(0.98 0 0);
   --sidebar-foreground: oklch(0 0 0);
   --sidebar-primary: oklch(0 0 0);
@@ -69,6 +72,9 @@
   --chart-3: oklch(0.6 0 0);
   --chart-4: oklch(0.45 0 0);
   --chart-5: oklch(0.3 0 0);
+  --surface-glow-a: oklch(0.2 0.03 245 / 0.32);
+  --surface-glow-b: oklch(0.18 0.02 95 / 0.28);
+  --surface-grid: oklch(0.3 0 0 / 0.24);
   --sidebar: oklch(0.1 0 0);
   --sidebar-foreground: oklch(0.98 0 0);
   --sidebar-primary: oklch(0.98 0 0);
@@ -129,6 +135,21 @@
 
   body {
     @apply font-sans bg-background text-foreground antialiased;
+    background-image:
+      radial-gradient(circle at 12% 0%, var(--surface-glow-a), transparent 52%),
+      radial-gradient(circle at 88% 12%, var(--surface-glow-b), transparent 48%),
+      linear-gradient(var(--surface-grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--surface-grid) 1px, transparent 1px);
+    background-size:
+      100% 100%,
+      100% 100%,
+      28px 28px,
+      28px 28px;
+    background-position:
+      0 0,
+      0 0,
+      -1px -1px,
+      -1px -1px;
   }
 
   html {

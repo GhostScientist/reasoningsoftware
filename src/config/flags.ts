@@ -13,7 +13,7 @@ export const DEV_FLAGS = {
   showResearch: true,
   showPapers: true,
   showTools: true,
-  showNotes: true,
+  showBlog: true,
   showAbout: true,
 } as const;
 

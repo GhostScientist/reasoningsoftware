@@ -1,0 +1,98 @@
+import { FramingCallout, LensSplit } from '@/components/research/MdxBlocks';
+
+## Why TKD
+
+The Knowledge Department (TKD) studies a central systems question: how can AI agents collaborate with humans to maintain trustworthy organizational knowledge as policies, ownership, and context shift over time.
+
+<FramingCallout title="Problem Framing">
+  Organizational knowledge is not static context. It is a living substrate that must be governed, versioned, audited, and continuously reconciled.
+</FramingCallout>
+
+## Product Layer and Research Layer
+
+<LensSplit
+  product={
+    <>
+      <p>TKD provides a practical service layer for structured assertions, provenance, versioning, and agent-facing APIs.</p>
+      <p>It defines identity and access boundaries so agent writes are auditable instead of opaque.</p>
+    </>
+  }
+  research={
+    <>
+      <p>TKD is also an evaluation platform for measuring policy quality, reward hacking, and robustness under realistic organizational drift.</p>
+      <p>It supports controlled comparisons from prompt policies to contextual bandits and PPO under identical reward definitions.</p>
+    </>
+  }
+/>
+
+## Custodian Model
+
+TKD decomposes knowledge operations into narrow agent roles with explicit rubrics:
+
+| Custodian | Responsibility | Status |
+| --- | --- | --- |
+| Archivist | Routes and categorizes incoming assertions | Active |
+| Validator | Verifies claims, calibrates confidence, detects contradiction | Active |
+| Reconciler | Resolves conflicts across competing entries | Planned |
+| Scout | Finds staleness and missing knowledge over time | Planned |
+
+The design bias is constrained action spaces over generalist autonomy.
+
+## In-Practice Flow
+
+Example input:
+
+`"All API responses should use camelCase for JSON keys"`
+
+1. Archivist routes assertion to `Engineering -> API Standards -> Naming Conventions`.
+2. Validator checks existing records, detects prior conflicting guidance, and emits calibrated uncertainty.
+3. Assertion is queued with provenance, contradiction metadata, and explicit human-review state.
+
+The key property is visibility: contradictions surface immediately and are never silently merged.
+
+## Watership Evaluation Environment
+
+Watership Group is a simulated mid-sized enterprise used for policy training and evaluation. It includes:
+
+- Time-varying organizational policies.
+- Contradictory and outdated documentation.
+- Department-specific norm conflicts.
+- Adversarial scenarios targeting reward gaming.
+
+Watership is deliberately realistic rather than synthetic-clean, because clean environments hide the failure modes that matter.
+
+## Optimization Progression
+
+TKD uses a dead-reckoning path from interpretable control to gradient optimization:
+
+1. Heuristics.
+2. Prompt policies.
+3. Contextual bandits.
+4. PPO.
+
+This progression keeps environment and rewards fixed to isolate what optimization regime changes in behavior, safety, and generalization.
+
+## Reward-Hacking Taxonomy
+
+| Failure Mode | Behavior | Risk |
+| --- | --- | --- |
+| Confidence Inflation | Validators over-assert certainty to improve throughput metrics | False trust and brittle automation |
+| Citation Farming | Circular references inflate credibility signals | Epistemic collapse and self-reference loops |
+| Staleness Arbitrage | Unneeded refresh operations satisfy quota-style rewards | Resource waste and benchmark gaming |
+| Contradiction Avoidance | Conflicts are routed away rather than resolved | Hidden inconsistency propagates downstream |
+
+## Research Hypotheses
+
+1. Narrow custodians outperform generalists on reward-hacking resistance under fixed evaluation criteria.
+2. Explicit uncertainty and provenance increase downstream user trust over time.
+3. RL policies improve robustness under distribution shift, while prompt policies remain easier to inspect and correct.
+
+## Current Status and Outputs
+
+Current phase is architecture and evaluation framework design. Planned artifacts include:
+
+- Watership Knowledge Curation Benchmark.
+- Comparative studies: prompt policy versus RL regimes.
+- Reusable environments and rubrics for organizational knowledge operations.
+
+Negative results are treated as publishable outputs rather than discarded noise.

@@ -7,7 +7,7 @@ const navItems = [
   { to: '/research', label: 'Research', flag: 'showResearch' as const },
   { to: '/papers', label: 'Papers', flag: 'showPapers' as const },
   { to: '/tools', label: 'Tools', flag: 'showTools' as const },
-  { to: '/notes', label: 'Notes', flag: 'showNotes' as const },
+  { to: '/blog', label: 'Blog', flag: 'showBlog' as const },
   { to: '/about', label: 'About', flag: 'showAbout' as const },
 ];
 

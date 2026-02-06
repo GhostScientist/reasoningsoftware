@@ -40,7 +40,7 @@ export const projects: Project[] = [
       'Prototype interface patterns and measure decision quality and time to resolution.',
     artifacts: [
       { name: 'Prototype', status: 'soon' },
-      { name: 'Notes', status: 'soon' },
+      { name: 'Essay', status: 'soon' },
     ],
     nextStep: 'Build a minimal interface prototype for study.',
   },

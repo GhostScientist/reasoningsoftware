@@ -31,10 +31,3 @@ export interface Paper {
   };
   artifacts: string[];
 }
-
-export interface Note {
-  slug: string;
-  title: string;
-  date: string;
-  content: string[];
-}
