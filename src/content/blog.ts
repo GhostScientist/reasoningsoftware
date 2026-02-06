@@ -14,7 +14,7 @@ export const blogPosts: BlogPostMeta[] = [
     date: '2026-02-05',
     excerpt:
       'An essay on what thinking is, how knowing shifts, and why epistemology is less a theory of justification than a game of pieces, moves, and constraints — from Plato through Bayes to agentic reasoning systems.',
-    readingTime: '25 min',
+    readingTime: '10 min',
     tags: ['epistemology', 'thinking', 'reasoning', 'reasoning-systems', 'landscape-review'],
   },
 ];
