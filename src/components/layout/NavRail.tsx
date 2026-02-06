@@ -6,7 +6,6 @@ const navItems = [
   { to: '/', label: 'Home', flag: 'showFullSite' as const },
   { to: '/research', label: 'Research', flag: 'showResearch' as const },
   { to: '/papers', label: 'Papers', flag: 'showPapers' as const },
-  { to: '/tools', label: 'Tools', flag: 'showTools' as const },
   { to: '/blog', label: 'Blog', flag: 'showBlog' as const },
   { to: '/about', label: 'About', flag: 'showAbout' as const },
 ];
@@ -21,18 +20,22 @@ export function NavRail() {
     <>
       {/* Desktop nav rail */}
       <nav
-        className="hidden md:flex fixed left-0 top-0 bottom-0 w-16 flex-col items-center py-8 border-r border-border bg-background z-40"
+        className="hidden md:flex fixed left-0 top-0 bottom-0 w-48 flex-col items-center py-8 border-r border-border bg-background z-40"
         aria-label="Main navigation"
       >
         <NavLink
           to="/"
-          className="font-mono text-xs font-semibold tracking-tight mb-8 hover:opacity-70 transition-opacity"
+          className="mb-8 hover:opacity-70 transition-opacity"
           aria-label="reasoning.software home"
         >
-          r.s
+          <img
+            src="/reasoning-software.png"
+            alt="reasoning.software"
+            className="w-full h-auto px-2 dark:invert"
+          />
         </NavLink>
 
-        <div className="flex flex-col gap-1 flex-1">
+        <div className="flex flex-col gap-1 flex-1 w-full px-3">
           {visibleItems.map((item) => (
             <NavLink
               key={item.to}
@@ -44,7 +47,7 @@ export function NavRail() {
               }
               end={item.to === '/'}
             >
-              {item.label.slice(0, 4)}
+              {item.label}
             </NavLink>
           ))}
         </div>
@@ -68,7 +71,7 @@ export function NavRail() {
             }
             end={item.to === '/'}
           >
-            {item.label.slice(0, 4)}
+            {item.label}
           </NavLink>
         ))}
         <ThemeToggle />

@@ -3,7 +3,6 @@ import { Link, useParams } from 'react-router-dom';
 import type { ComponentType } from 'react';
 import type React from 'react';
 import { getProgramBySlug } from '@/content/programs';
-import { CapabilityMatrix } from '@/components/research/CapabilityMatrix';
 import { RoadmapTrack } from '@/components/research/RoadmapTrack';
 
 const mdxModules = import.meta.glob<{ default: ComponentType }>(
@@ -139,7 +138,6 @@ export function ProgramDetail() {
         </div>
 
         <div className="space-y-5">
-          <CapabilityMatrix title="Capability Profile" capabilities={program.capabilities} />
           <RoadmapTrack phases={program.roadmap} />
         </div>
       </section>

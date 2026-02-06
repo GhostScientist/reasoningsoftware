@@ -12,7 +12,7 @@ export const DEV_FLAGS = {
   /** Individual section toggles (only apply when showFullSite is true) */
   showResearch: true,
   showPapers: true,
-  showTools: true,
+  showTools: false,
   showBlog: true,
   showAbout: true,
 } as const;

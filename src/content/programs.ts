@@ -1,10 +1,5 @@
 export type RoadmapStatus = 'Current' | 'Planned' | 'Complete';
 
-export interface ProgramCapability {
-  label: string;
-  score: number;
-}
-
 export interface ProgramRoadmapPhase {
   phase: string;
   focus: string;
@@ -30,7 +25,6 @@ export interface Program {
   summary: string;
   productAngles: string[];
   researchAngles: string[];
-  capabilities: ProgramCapability[];
   roadmap: ProgramRoadmapPhase[];
   metrics: ProgramMetric[];
   links: ProgramLink[];
@@ -54,13 +48,6 @@ export const flagshipPrograms: Program[] = [
       'RAG retrieval quality under large codebase entropy',
       'Agentic planning reliability for long documentation runs',
       'Evaluation harness for traceability precision and broken-link drift',
-    ],
-    capabilities: [
-      { label: 'Code Traceability', score: 95 },
-      { label: 'Autonomous Exploration', score: 88 },
-      { label: 'Docs UX Quality', score: 84 },
-      { label: 'Reproducible Runs', score: 79 },
-      { label: 'Research Instrumentation', score: 82 },
     ],
     roadmap: [
       {
@@ -112,13 +99,6 @@ export const flagshipPrograms: Program[] = [
       'Prompt-policy versus RL policy performance under identical rewards',
       'Failure taxonomy for reward hacking in knowledge curation',
       'Benchmark-driven evaluation in realistic, time-varying organizations',
-    ],
-    capabilities: [
-      { label: 'Governance Design', score: 93 },
-      { label: 'Evaluation Rigor', score: 90 },
-      { label: 'Operational Safety', score: 87 },
-      { label: 'Policy Learning Depth', score: 76 },
-      { label: 'Benchmark Reusability', score: 89 },
     ],
     roadmap: [
       {

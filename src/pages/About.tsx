@@ -1,10 +1,9 @@
 import { useEffect } from 'react';
 
 const links = [
-  { name: 'GitHub', url: '#', placeholder: true },
-  { name: 'ORCID', url: '#', placeholder: true },
-  { name: 'arXiv', url: '#', placeholder: true },
-  { name: 'Google Scholar', url: '#', placeholder: true },
+  { name: 'GitHub', url: 'https://github.com/ghostscientist' },
+  { name: 'ORCID', url: 'https://orcid.org/0009-0000-2040-908X' },
+  { name: 'arXiv', url: 'https://arxiv.org/a/ghostscientist.html' },
 ];
 
 export function About() {
@@ -22,22 +21,27 @@ export function About() {
 
       <section className="space-y-4">
         <p className="leading-relaxed">
-          This is an independent research initiative focused on understanding
-          how reasoning systems work in practice. The work sits at the
-          intersection of machine learning, human-computer interaction, and
-          applied AI—with an emphasis on what happens when systems leave the lab
-          and encounter real constraints.
+          I'm an independent researcher and engineer interested in how reasoning
+          works—in language models, in software systems, and in the messy
+          overlap between humans and machines.
         </p>
 
         <p className="leading-relaxed">
-          The approach is empirical and iterative: build small experiments, look
-          carefully at what happens, and share what we find. The goal is to
-          develop tools and intuitions that help practitioners work more
-          effectively with reasoning systems.
+          This site is my lab notebook. I use it to document what I'm building,
+          log experiments, and work through ideas in the open. Nothing here
+          should be read as settled or authoritative—it's an honest record of
+          an ongoing process.
         </p>
 
         <p className="leading-relaxed">
-          Questions and collaboration welcome.
+          The projects I'm currently focused on involve codebase understanding,
+          knowledge governance for AI agents, and the practical failure modes
+          of deployed reasoning systems. I tend to work at the intersection
+          of building things and studying how they behave.
+        </p>
+
+        <p className="leading-relaxed">
+          If any of this is interesting to you, feel free to reach out.
         </p>
       </section>
 
@@ -48,18 +52,14 @@ export function About() {
         <ul className="flex flex-wrap gap-4 font-mono text-sm">
           {links.map((link) => (
             <li key={link.name}>
-              {link.placeholder ? (
-                <span className="text-muted-foreground">{link.name}</span>
-              ) : (
-                <a
-                  href={link.url}
-                  className="underline underline-offset-2 hover:text-muted-foreground transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {link.name}
-                </a>
-              )}
+              <a
+                href={link.url}
+                className="underline underline-offset-2 hover:text-muted-foreground transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.name}
+              </a>
             </li>
           ))}
         </ul>

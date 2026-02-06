@@ -12,19 +12,9 @@ export function Blog() {
       <header className="space-y-2">
         <h1 className="font-mono text-lg font-semibold tracking-tight">Blog</h1>
         <p className="text-muted-foreground">
-          Thought pieces and landscape reviews on reasoning, epistemology, and research practice.
+          Essays and notes on reasoning, epistemology, and building things that think.
         </p>
       </header>
-
-      <section className="rounded-md border border-border bg-card/70 p-4">
-        <p className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">
-          Format
-        </p>
-        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-          This section now supports recurring landscape reviews: historical context,
-          current-state synthesis, and concrete implications for reasoning-system design.
-        </p>
-      </section>
 
       <ul className="space-y-4">
         {blogPosts.map((post) => (

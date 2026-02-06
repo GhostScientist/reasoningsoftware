@@ -13,7 +13,6 @@ import { Research } from '@/pages/Research';
 import { ProgramDetail } from '@/pages/ProgramDetail';
 import { Papers } from '@/pages/Papers';
 import { PaperDetail } from '@/pages/PaperDetail';
-import { Tools } from '@/pages/Tools';
 import { Blog } from '@/pages/Blog';
 import { BlogPostDetail } from '@/pages/BlogPostDetail';
 import { About } from '@/pages/About';
@@ -40,7 +39,6 @@ function FullSiteRoutes() {
             <Route path="/papers/:slug" element={<PaperDetail />} />
           </>
         )}
-        {DEV_FLAGS.showTools && <Route path="/tools" element={<Tools />} />}
         {DEV_FLAGS.showBlog && (
           <>
             <Route path="/blog" element={<Blog />} />

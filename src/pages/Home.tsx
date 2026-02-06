@@ -15,34 +15,28 @@ export function Home() {
         </h1>
 
         <p className="text-lg leading-relaxed">
-          Independent applied research on reasoning systems—human, machine, and
-          hybrid.
+          A lab notebook for working through ideas about reasoning
+          systems—how they work, where they break, and what to build next.
         </p>
 
         <p className="text-muted-foreground leading-relaxed">
-          Experiments, papers, tools, and essays focused on clarity,
-          failure modes, and real-world deployment.
+          I use this site to think out loud: documenting experiments,
+          logging what I find, and sharing notes along the way.
         </p>
       </header>
 
       <section className="space-y-4">
         <p className="leading-relaxed">
-          reasoning.software is a living research notebook and lab bench. It
-          collects applied experiments and artifacts about how reasoning works
-          and how it breaks down—across models, interfaces, and real-world
-          constraints.
-        </p>
-
-        <p className="leading-relaxed">
-          The emphasis is on clear questions, reproducible methods, and
-          visualizations that help reveal what's happening rather than obscuring
-          it.
+          This is where I collect my ongoing work on reasoning—across
+          language models, interfaces, and real-world deployment. Nothing
+          here is finished or authoritative. It's a working notebook, and
+          the entries reflect wherever I happen to be in the process.
         </p>
       </section>
 
       <section className="space-y-4 border-t border-border pt-8">
         <h2 className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">
-          Current Program Narratives
+          What I'm working on
         </h2>
         <div className="grid gap-4 md:grid-cols-2">
           {flagshipPrograms.map((program) => (
@@ -56,7 +50,7 @@ export function Home() {
                 to={`/research/${program.slug}`}
                 className="font-mono text-xs uppercase tracking-[0.1em] underline underline-offset-4 transition-colors hover:text-muted-foreground"
               >
-                Open research page
+                Open project page
               </Link>
             </article>
           ))}
@@ -71,14 +65,6 @@ export function Home() {
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
               Research →
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/papers"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Papers →
             </Link>
           </li>
           <li>

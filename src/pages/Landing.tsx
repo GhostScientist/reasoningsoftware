@@ -18,15 +18,14 @@ export function Landing() {
         </h1>
 
         <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
-          Independent applied research on reasoning systems—machine, human, and
-          hybrid. Exploring how models think, where they fail, and what
-          interfaces help.
+          A lab notebook about reasoning systems—how models think, where they
+          break, and what's worth building next.
         </p>
 
         <p className="text-base text-muted-foreground leading-relaxed mb-8">
-          Topics include world modeling, long-horizon reasoning, embodied
-          intelligence, human-computer interfaces, and applied AI. Experiments,
-          paper recreations, tooling, and open questions.
+          Things I'm currently exploring: world modeling, long-horizon reasoning,
+          embodied intelligence, human-computer interfaces, and applied AI.
+          Experiments, notes, and open questions.
         </p>
 
         <p className="font-mono text-sm text-muted-foreground">
