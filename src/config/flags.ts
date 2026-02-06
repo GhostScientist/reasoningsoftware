@@ -7,7 +7,7 @@
 
 export const DEV_FLAGS = {
   /** Show the full site with all routes, or just the landing page */
-  showFullSite: import.meta.env.VITE_DEV_MODE === 'true',
+  showFullSite: true,
 
   /** Individual section toggles (only apply when showFullSite is true) */
   showResearch: true,
